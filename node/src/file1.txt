@@ -1,0 +1,7 @@
+const fs = require('fs').promise;
+
+fs.readFile('file |.txt','utf8')
+.then(data | => fs.readFile('file2.txt','utf8').then(data2 => [data|,data2]))
+.then(([data,data2]) => fs.readFile('file3.txt','utf8').then(data3=> [data|,data2,data3]))
+.then(([data|, data2, data3]) => console.log(data |,data2, data3))
+.catch(err => console.error(err));

@@ -1,0 +1,20 @@
+{
+  "name": "finance_project",
+  "version": "1.0.0",
+  "description": "A backend project for managing financial transactions built with Node.js, Express, and MongoDB. It provides CRUD operations for transactions and analytics endpoints using MongoDB aggregation pipelines.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0"
+  }
+}
