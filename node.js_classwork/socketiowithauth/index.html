@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.io Chat + Rooms</title>
+</head>
+<body>
+  <h2>Simple Chat with Rooms</h2>
+
+  <ul id="messages"></ul>
+
+  <input id="msg" placeholder="Type message..." autocomplete="off" />
+  <button onclick="sendMsg()">Send</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // -------------------------
+    // Send normal chat message
+    // -------------------------
+    function sendMsg() {
+      const msg = document.getElementById("msg").value;
+      socket.emit("chat message", msg);
+      document.getElementById("msg").value = "";
+    }
+
+    // Display normal chat messages
+    socket.on("chat message", (msg) => {
+      const li = document.createElement("li");
+      li.textContent = msg;
+      document.getElementById("messages").appendChild(li);
+    });
+
+    // -------------------------
+    // ROOM JOINING
+    // -------------------------
+    socket.emit("joinRoom", "room1");
+
+    // -------------------------
+    // SEND ROOM MESSAGE
+    function sendRoomMsg() {
+      const msg = document.getElementById("msg").value;
+      socket.emit("join room", { room: "room1", message: msg });
+      document.getElementById("msg").value = "";
+    }
+
+    // Display room messages
+    socket.on("message", (msg) => {
+      const li = document.createElement("li");
+      li.textContent = msg;
+      document.getElementById("messages").appendChild(li);
+    });
+
+    // Override send button to send room message
+    document.querySelector("button").onclick = sendRoomMsg;
+  </script>
+    // -------------------------
+    socket.emit("room message", {
+      room: "room1",
+      message: "Hello Room 1!"
+    });
+
+    // RECEIVE ROOM MESSAGE
+    socket.on("message", (msg) => {
+      const li = document.createElement("li");
+      li.textContent = `[ROOM] ${msg}`;
+      document.getElementById("messages").appendChild(li);
+    });
+  </script>
+</body>
+</html>

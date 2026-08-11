@@ -1,0 +1,36 @@
+[
+{
+"txnId": "T1001",
+"accountId": "A5001",
+"type": "Credit",
+"amount": 2500.75,
+"currency": "INR",
+"date": "2025-09-29T10:15:30Z",
+"status": "SUCCESS",
+"channel": "MobileBanking",
+"remarks": "Salary credit",
+"address": {
+"city": "Mumbai",
+"state": "Maharashtra",
+"country": "India"
+},
+"tags": ["monthly", "salary", "priority"]
+},
+{
+"txnId": "T1002",
+"accountId": "A5002",
+"type": "Debit",
+"amount": 800.5,
+"currency": "INR",
+"date": "2025-09-30T11:30:00Z",
+"status": "SUCCESS",
+"channel": "ATM",
+"remarks": "Groceries",
+"address": {
+"city": "Delhi",
+"state": "Delhi",
+"country": "India"
+},
+"tags": ["food", "shopping"]
+}
+]
