@@ -1,0 +1,7 @@
+This is a Node.js file system demo.
+
+
+Output
+Synchronous Read: This is a Node.js file system demo.
+Asynchronous Read: This is a Node.js file system demo.
+File renamed to data.txt

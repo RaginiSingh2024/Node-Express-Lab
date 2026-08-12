@@ -1,0 +1,8 @@
+This is a sample large file.
+It contains multiple lines to simulate a big data file.
+Node.js Streams process data efficiently.
+
+Generated File (documentation.txt):
+This content is written using Node.js Write Stream.
+Streams are efficient for handling large files.
+They read/write data in chunks instead of loading everything in memory.
